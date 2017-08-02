@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Estudando JS</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <base href="http://dropbox.dev/estudando-javascript/" />
+</head>
+
+<body>
+
+    <header id="menu">
+        <div id="menu-open">
+            <i class="fa fa-bars"></i>
+        </div>
+        <nav id="menu-content">
+            <ul>
+                <li><a href="">home</a></li>
+                <li><a href="">teste</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <div class="content">
+
+            <nav class="breadcrumb">
+                <ul>
+                    <li> <a href="">home</a> </li>
+                    <li><span>Página inicial</span></li>
+                </ul>
+            </nav>
+
+            <form action="" method="post" name="FormCadastro" onsubmit="return FormCadastrar(event);">
+
+                <h2 class="form-header">Nos diga seu nome</h2>
+
+                <div class="input-group">
+                    <label class="form-label" for="name">Nome:</label>
+                    <input type="text" class="form-input" name="name" id="Name" />
+                    <span class="form-description">Tente validar com o form vazio, depois com o nome "Caio" e depois finalize com o seu nome.</span>
+                </div>
+
+                <div class="button-group">
+                    <button class="form-button" id="cadastrar">Cadastrar</button>
+                </div>
+
+            </form>
+
+            <div id="message-result"></div>
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="js/application.js"></script>
+
+</body>
+
+</html>
