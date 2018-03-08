@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,35 +8,26 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
-
 <body>
 
-    <header id="menu">
+    <header role="header" id="menu">
         <div id="menu-open">
             <i class="fa fa-bars"></i>
         </div>
         <nav id="menu-content">
             <ul>
-                <li><a href="">home</a></li>
-                <li><a href="">teste</a></li>
+                <li><a href="#">home</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="container">
+    <main role="main" class="container">
 
-        <div class="content">
+        <section class="content">
 
-            <nav class="breadcrumb">
-                <ul>
-                    <li> <a href="">home</a> </li>
-                    <li><span>Página inicial</span></li>
-                </ul>
-            </nav>
+            <form role="form" action="" method="post" name="form-register" id="form-register" onsubmit="return formLetSubmit(event)">
 
-            <form action="" method="post" name="FormCadastro" onsubmit="return FormCadastrar(event);">
-
-                <h2 class="form-header">Nos diga seu nome</h2>
+                <h2 class="form-header">Nos diga seu nome...</h2>
 
                 <div class="input-group">
                     <label class="form-label" for="name">Nome:</label>
@@ -49,13 +39,13 @@
                     <button class="form-button" id="cadastrar">Cadastrar</button>
                 </div>
 
+                <div id="message-result"></div>
+
             </form>
 
-            <div id="message-result"></div>
+        </section>
 
-        </div>
-
-    </div>
+    </main>
 
     <script type="text/javascript" src="js/application.js"></script>
 

@@ -1,47 +1,49 @@
-window.onload = function () {
+onLoadWindow = () => {
 
-    var MenuOpen = document.querySelector('#menu-open'),
-        MenuContent = document.querySelector('#menu-content'),
-        FormCadastro = document.forms.FormCadastro,
-        Name = FormCadastro.name,
-        MessageResult = document.querySelector('#message-result'),
-        UserName = null;
+    const menuOpen = document.getElementById('menu-open')
+    const menuContent = document.getElementById('menu-content')
+    const formRegister = document.getElementById('form-register')
+    const messageResult = document.getElementById('message-result')
 
-    Name.focus();
+    let name = formRegister.name
+    let username = null
 
-    MenuOpen.onclick = function () {
-        MenuContent.classList.toggle('visible');
+    name.focus();
+
+    menuOpen.onclick = () => {
+        menuContent.classList.toggle('visible')
     }
 
-    FormCadastrar = function (event) {
-        event.preventDefault();
+    formLetSubmit = event => {
+        event.preventDefault()
 
-        if (!Name.value) {
-            Name.focus();
-            MessageResult.innerText = 'Preencha o campo nome!';
-            return;
+        let message = null
+
+        if(!name.value) message = 'Preencha o campo nome!'
+
+        if(name.value==='Caio') message = 'Caio não está disponível'
+
+        if(message) {
+            name.value = ''
+            messageResult.innerText = message
+            return name.focus()
         }
 
-        if (Name.value === 'Caio') {
-            Name.focus();
-            Name.value = '';
-            MessageResult.innerText = 'Caio não está disponível';
-            return;
-        }
+        username   = name.value
+        name.value = ''
+        document.activeElement.blur()
 
-        UserName = Name.value;
-        Name.value = '';
-        document.activeElement.blur();
+        messageResult.classList.add('success')
+        messageResult.innerHTML = `Parabéns <b>${username}</b>! Você conseguiu! =D`
 
-        MessageResult.classList.add('success');
-        MessageResult.innerHTML = '<i class="fa fa-refresh fa-pulse"></i> Parabéns <b>' + UserName + '</b>! Você conseguiu. =D';
+        setTimeout(() => {
+            messageResult.classList.remove('success')
+            messageResult.innerHTML = ''
+        }, 4000)
 
-        setTimeout(function () {
-            MessageResult.classList.remove('success');
-            MessageResult.innerHTML = '';
-        }, 4000);
-
-        return false;
+        return false
     }
 
 }
+
+window.onload = onLoadWindow
